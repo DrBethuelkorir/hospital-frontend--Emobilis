@@ -38,6 +38,10 @@ function App() {
         setShowForm(false);
 
     };
+    const handleDelete = (id) =>{
+        setPatients(patients.filter(pati =>pati.id != id));
+    }
+    
 
     return (
 
@@ -96,6 +100,7 @@ function App() {
                         <PatientForm
                             onAddPatient={handleAddPatient}
                             onCancel={() => setShowForm(false)}
+                            
                         />
                     )}
 
@@ -103,6 +108,8 @@ function App() {
                     <PatientTable
                         patients={patients}
                         onAddClick={() => setShowForm(true)}
+                        onDeleteClick={handleDelete}
+                    
                     />
 
                     <Footer />

@@ -1,5 +1,5 @@
 
-function PatientTable({ patients, onAddClick }) {
+function PatientTable({ patients, onAddClick , onDeleteClick}) {
 
     return (
         <div className="card table-card">
@@ -69,11 +69,13 @@ function PatientTable({ patients, onAddClick }) {
                                             <i className="bi bi-eye"></i>
                                         </button>
 
-                                        <button className="btn btn-sm btn-outline-primary ms-1">
+                                        <button className="btn btn-sm btn-outline-primary ms-1"
+                                        >
                                             <i className="bi bi-pencil"></i>
                                         </button>
 
-                                        <button className="btn btn-sm btn-outline-danger ms-1">
+                                        <button className="btn btn-sm btn-outline-danger ms-1"
+                                         onClick={() => onDeleteClick(patient.id)}>
                                             <i className="bi bi-trash"></i>
                                         </button>
                                     </td>
